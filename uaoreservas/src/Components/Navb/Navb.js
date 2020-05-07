@@ -1,8 +1,7 @@
 import React from 'react';
 import LogoH from '../../Resources/logo_Horizontal.png';
 import './Navb.css'
-
-
+import {NavLink} from 'react-router-dom';
 
 class Navb extends React.Component {
 
@@ -11,9 +10,10 @@ class Navb extends React.Component {
         return (
 
             <nav className="navbar navbar-expand-md navbar-dark fixed-top o-navbar">
-
                 <a className="navbar-brand" href="#">
-                    <img src={LogoH} className="o-logoHUAO" alt="logo Horizontal de UAO Reservas" />
+                    <img src={LogoH}
+                        className="o-logoHUAO"
+                        alt="logo Horizontal de UAO Reservas"/>
                 </a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -21,33 +21,34 @@ class Navb extends React.Component {
                 <div className="collapse navbar-collapse " id="navbarCollapse">
                     <ul className="navbar-nav m-auto">
                         <li className="nav-item active mr-3 ml-3">
-                            <a className="nav-link" href="#">
-                                <p className="o-link">Reservas</p></a>
+                            <NavLink to="/Reservations" className="nav-link">
+                                <p className="o-link">Reservas</p>
+                            </NavLink>
                         </li>
                         <li className="nav-item active mr-3 ml-3">
-                            <a className="nav-link" href="#">
-                                <p className="o-link ">Espacios Reservados</p></a>
+                            <NavLink to="" className="nav-link">
+                                <p className="o-link ">Espacios Reservados</p>
+                            </NavLink>
                         </li>
                         <li className="nav-item active mr-3 ml-3">
-                            <a className="nav-link" href="#">
-                                <p className="o-link">Mapa</p></a>
+                            <NavLink to="/Map" className="nav-link">
+                                <p className="o-link">Mapa</p>
+                            </NavLink>
                         </li>
                         <li className="nav-item active mr-3 ml-3">
-                            <a className="nav-link" href="#">
-                                <p className="o-link">Contacto</p></a>
+                            <NavLink to="/Contact" className="nav-link">
+                                <p className="o-link">Contacto</p>
+                            </NavLink>
                         </li>
                     </ul>
                     <div className="mt-2 mt-md-0 o-usCont">
                         <h5>Usuario</h5>
-                        <p>Usuario@gmail.com</p>
-                    </div >
+                        <p>Usuario@uao.edu.co</p>
+                    </div>
                 </div>
             </nav>
-
         )
-
     }
-
 }
 
 export default Navb;

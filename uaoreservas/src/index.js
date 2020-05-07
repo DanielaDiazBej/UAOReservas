@@ -1,14 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+// import App from './App';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+import * as serviceWorker from './serviceWorker';
+import Footer from './Components/Footer/Footer';
+import {HashRouter as Router, Route, Switch} from 'react-router-dom';
+
+// Components
+import Home from './Components/Home/Home';
+import Navb from './Components/Navb/Navb';
+
+// Pages
+import Reservations from './Components/Reservations/Reservations';
+
+ReactDOM.render (
+    <React.StrictMode>
+        <Router>
+        <Navb/>
+            <div>
+                <Switch>
+                    <Route exact path='/' component={Home}/>
+                    <Route path='/Reservations'  component={Reservations}/>
+                </Switch>
+            </div>
+        </Router>
+        <Footer/>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

@@ -5,6 +5,7 @@ import Checkbox2 from  './Components/Table/Table'
 import Split from './Components/Options/Options'
 import Button from './Components/Button/Button'
 import Navb from './Components/Navb/Navb'
+import Footer from './Components/Footer/Footer'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <Checkbox2 room={"2402"}/> 
       <Checkbox2 room={"1305"}/>
       <Button/>
+      <Footer/>
     </div>
   );
 }
