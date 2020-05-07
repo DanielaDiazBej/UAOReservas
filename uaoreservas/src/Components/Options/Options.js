@@ -1,5 +1,5 @@
 import React from "react";
-import Split from "./splitButton";
+import Split from "../SplitButton/splitButton";
 import "./options.css";
 import { Grid } from "@material-ui/core";
 

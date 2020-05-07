@@ -1,7 +1,7 @@
 import React from 'react';
-import Menu from './Menu'
-import LogoH from '../Resources/logo_Horizontal.png'
-import './header.css'
+import Menu from '../Menu/Menu'
+import LogoH from '../../Resources/logo_Horizontal.png'
+import '../Header/header.css'
 import { Grid } from '@material-ui/core';
 
 const Header = () => {

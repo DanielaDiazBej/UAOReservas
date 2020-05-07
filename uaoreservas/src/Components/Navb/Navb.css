@@ -1,0 +1,26 @@
+.o-logoHUAO{
+    height: 3rem;
+    padding: 0.5rem;
+}
+
+.o-navbar{
+    position: unset;
+    padding: 0 auto ;
+    background: black;
+
+}
+
+.o-usCont h5{
+    color: white;
+    margin: 0;
+}
+
+.o-usCont p{
+    color: white;
+    margin: 0;
+}   
+
+
+.o-link:hover{
+    color:red;
+}
