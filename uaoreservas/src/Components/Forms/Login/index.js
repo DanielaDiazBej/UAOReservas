@@ -23,12 +23,12 @@ const LoginForm = () => {
       user: user?.current?.input?.value,
       pass: pass?.current?.input?.value,
     });
+    history.push("/#/Reservations");
   };
-  if (currentToken) {
-    history.push("/schedules/meetings");
-  }
+
   return (
     <Block
+      width="100vw"
       height="100vh"
       display="flex"
       justifyContent="center"
