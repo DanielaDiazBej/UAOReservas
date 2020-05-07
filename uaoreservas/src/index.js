@@ -1,33 +1,36 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import "antd/dist/antd.css";
 // import App from './App';
 
-import * as serviceWorker from './serviceWorker';
-import Footer from './Components/Footer/Footer';
-import {HashRouter as Router, Route, Switch} from 'react-router-dom';
+import * as serviceWorker from "./serviceWorker";
+import Footer from "./Components/Footer/Footer";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 // Components
-import Home from './Components/Home/Home';
-import Navb from './Components/Navb/Navb';
+import Home from "./Components/Home/Home";
+import Navb from "./Components/Navb/Navb";
 
 // Pages
-import Reservations from './Components/Reservations/Reservations';
+import Reservations from "./Components/Reservations/Reservations";
+import LoginForm from "./Components/Forms/Login";
 
-ReactDOM.render (
-    <React.StrictMode>
-        <Router>
-        <Navb/>
-            <div>
-                <Switch>
-                    <Route exact path='/' component={Home}/>
-                    <Route path='/Reservations'  component={Reservations}/>
-                </Switch>
-            </div>
-        </Router>
-        <Footer/>
-    </React.StrictMode>,
-    document.getElementById('root')
+ReactDOM.render(
+  <React.StrictMode>
+    <Router>
+      <Navb />
+      <div>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/login" component={LoginForm} />
+          <Route path="/Reservations" component={Reservations} />
+        </Switch>
+      </div>
+    </Router>
+    <Footer />
+  </React.StrictMode>,
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
