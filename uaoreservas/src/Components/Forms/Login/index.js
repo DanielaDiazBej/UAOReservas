@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from "react";
-import { Typography, Form, Input, Button, message } from "antd";
+import { Typography, Form, Input, Button, message, Modal } from "antd";
 import { useHistory } from "react-router-dom";
 import { UserOutlined, LockOutlined, GoogleOutlined } from "@ant-design/icons";
 import { PrimaryButton } from "../../UI/Buttons/index.js";
 import { Block } from "../../UI/Contents/index.js";
+import get from "lodash/get";
+import axios from "axios";
 
 const LoginForm = () => {
   const history = useHistory();
@@ -11,7 +13,6 @@ const LoginForm = () => {
   const pass = useRef();
   const loadingStatus = false;
   const errorStatus = "";
-  const currentToken = "";
 
   useEffect(() => {
     if (errorStatus) {
@@ -19,12 +20,49 @@ const LoginForm = () => {
     }
   }, [errorStatus]);
   const handleLogin = () => {
-    console.log({
-      user: user?.current?.input?.value,
-      pass: pass?.current?.input?.value,
-    });
+    // console.log({
+    //   user: user?.current?.input?.value,
+    //   pass: pass?.current?.input?.value,
+    // });
     history.push("/#/Reservations");
   };
+
+  const handleGoogleLogin = (e) => {
+    e.preventDefault();
+    window.open(
+      `${process.env.REACT_APP_CMS_URL}/connect/google`,
+      "popUpWindow",
+      "height=500,width=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes"
+    );
+  };
+
+  const receiveDataFromPopup = (data) => {
+    if (get(data, "data.type", "") === "REGISTRATION") {
+      const parts = get(data, "data.rawUrl", "").match(/([^\?]+)(\?.*)?/);
+      const query = parts[2] || "";
+      const paths = (parts[1] || "").replace(/^https?:\/\//, "").split("/");
+
+      axios
+        .get(`${process.env.REACT_APP_CMS_URL}/auth/google/callback${query}`)
+        .then((res) => {
+          if (get(res, "data.user.email", "")) {
+            localStorage.setItem("USER_EMAIL", get(res, "data.user.email", ""));
+            history.push("/");
+          }
+        })
+        .catch(() => {
+          message.error("Hubo un error, porfavor intentalo de nuevo más tarde");
+        });
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("message", receiveDataFromPopup, false);
+
+    return () => {
+      window.removeEventListener("message", receiveDataFromPopup, false);
+    };
+  }, []);
 
   return (
     <Block
@@ -114,7 +152,7 @@ const LoginForm = () => {
               icon={<GoogleOutlined />}
               style={{ width: "100%" }}
               type="default"
-              htmlType="submit"
+              onClick={handleGoogleLogin}
             >
               Ingresar con Google
             </Button>

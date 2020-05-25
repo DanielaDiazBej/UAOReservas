@@ -6,7 +6,7 @@ import "antd/dist/antd.css";
 
 import * as serviceWorker from "./serviceWorker";
 import Footer from "./Components/Footer/Footer";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Components
 import Home from "./Components/Home/Home";
@@ -19,11 +19,12 @@ import LoginForm from "./Components/Forms/Login";
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Navb />
       <div>
+        <Navb />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/login" component={LoginForm} />
+
           <Route path="/Reservations" component={Reservations} />
         </Switch>
       </div>
