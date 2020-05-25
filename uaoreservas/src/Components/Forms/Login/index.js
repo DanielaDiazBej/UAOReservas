@@ -19,12 +19,24 @@ const LoginForm = () => {
       message.error("errorStatus");
     }
   }, [errorStatus]);
-  const handleLogin = () => {
+  const handleLogin = (values) => {
     // console.log({
     //   user: user?.current?.input?.value,
     //   pass: pass?.current?.input?.value,
     // });
-    history.push("/#/Reservations");
+    console.log(values);
+    // history.push("/Reservations");
+    axios
+      .post(`${process.env.REACT_APP_CMS_URL}/auth/local`, values)
+      .then((res) => {
+        if (get(res, "data.user.email", "")) {
+          localStorage.setItem("USER_EMAIL", get(res, "data.user.email", ""));
+          history.push("/");
+        }
+      })
+      .catch((err) => {
+        message.error("Hubo un error, por favor intentalo más tarde");
+      });
   };
 
   const handleGoogleLogin = (e) => {
@@ -89,7 +101,7 @@ const LoginForm = () => {
         <Block>
           <Form onFinish={handleLogin} layout="vertical">
             <Form.Item
-              name="email"
+              name="identifier"
               rules={[
                 {
                   type: "email",
