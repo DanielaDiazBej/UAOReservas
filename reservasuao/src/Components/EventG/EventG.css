@@ -2,33 +2,22 @@
     min-height: 24em;
 }
 
-
-
-
-
-/* @media (min-width: 576px) {
-    .o-card{
-        width: 18rem;
-    }
- }
-
-
-@media (min-width: 768px) {
-    .o-card{
-        width: 18rem;
-    }
- }
-
-
-@media (min-width: 992px) {
-    .o-card{
-      width: 18rem;
-    }   
+.o-cardTitle{
+    height: 7rem;
+    margin: 0 20px;
 }
 
+.o-cardText{
+    height: 18rem;
+    margin: 0 20px;
+}
 
-@media (min-width: 1200px) { 
-    .o-card{
-        width: 18rem;
-    }
-} */
+.o-cardHeader{
+    margin:0;
+    background-color: black;
+    color: white;
+}
+
+.o-cardBody{
+    padding: 0;
+}

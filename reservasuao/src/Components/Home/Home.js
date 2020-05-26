@@ -3,9 +3,7 @@ import EventsG from '../EventsG/EventsG';
 
 
 class Home extends React.Component {
-
     render() {
-
         return (
             <>          
                 <main role="main" className="flex-shrink-0 mt-5">

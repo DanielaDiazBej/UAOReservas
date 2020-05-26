@@ -16,10 +16,6 @@ function User() {
                 show={modalShow}
                 onHide={() => setModalShow(false)}
             />
-
-            <h5>Usuario</h5>
-            <p>Usuario@uao.edu.co</p>
-            <p>Salir</p>
         </div>
     );
 };
