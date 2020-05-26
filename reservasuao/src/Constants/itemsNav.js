@@ -13,7 +13,7 @@ export default[
     },
     {
         title:"Mapa",
-        url:"/map"
+        url:"/Map"
     },
     {
         title:"Soporte",

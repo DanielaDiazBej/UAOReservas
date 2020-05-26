@@ -11,6 +11,7 @@ import Navb from "./Components/Navb/Navb";
 import Home from "./Components/Home/Home";
 import Reservation from "./Components/Reservation/Reservation";
 import Support from "./Components/Support/Support.js";
+import Map from "./Components/Map/Map.js";
 import Footer from "./Components/Footer/Footer";
 
 
@@ -19,7 +20,6 @@ ReactDOM.render(
   <React.StrictMode>
   <Router>
     <Navb />
-   
     <div>
       <Switch>
        
@@ -27,6 +27,7 @@ ReactDOM.render(
       {/*   <Route path="/login" component={LoginForm} />*/}
         <Route path="/Reservation" component={Reservation} /> 
         <Route path="/Support" component={Support} />
+        <Route path="/Map" component={Map} />
       </Switch>
     </div>
   <Footer />
