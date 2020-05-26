@@ -35,7 +35,18 @@ const Table = ({room}) => {
 
     return (
         <div className="container pb-5">
-            <h1> "Espacio" {room}</h1>
+            <h1 className="pb-3">  "Espacio" {room}</h1>
+            <div className="d-flex justify-content-around pb-2">
+                <div>
+                <button type="button" class="btn btn-secondary"></button> Reservados
+                </div>
+                <div>
+                <button type="button" class="btn btn-outline-danger"></button> Libres
+                </div>
+                <div>
+                <button type="button" class="btn btn-danger"></button> Seleccionados
+                </div>
+            </div>
             <div className="container pb-2">
                 <table className="table text-center align-middle">
                 <thead class="bg-danger">
@@ -67,7 +78,7 @@ const Table = ({room}) => {
                                             <span className="btn btn-danger"
                                                 onClick={
                                                     handleSelection(`${index}-${columnIndex}`)
-                                            }>Reservado</span>
+                                            }>Seleccionado</span>
                                         ) : (
                                             <>
                                                 <button type="button" className="btn btn-outline-danger"  onClick={ handleSelection(`${index}-${columnIndex}`)
@@ -84,17 +95,7 @@ const Table = ({room}) => {
                 } </table>
 
             </div>
-            <div className="d-flex justify-content-around   ">
-                <div>
-                <button type="button" class="btn btn-secondary"></button> Reservados
-                </div>
-                <div>
-                <button type="button" class="btn btn-outline-danger"></button> Libres
-                </div>
-                <div>
-                <button type="button" class="btn btn-danger"></button> Seleccionados
-                </div>
-            </div>
+
         </div>
         
     )

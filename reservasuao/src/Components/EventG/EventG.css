@@ -1,5 +1,6 @@
 .o-card{
     min-height: 24em;
+    border-radius: 25%;
 }
 
 .o-cardTitle{

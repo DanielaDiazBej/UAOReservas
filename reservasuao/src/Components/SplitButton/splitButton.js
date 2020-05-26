@@ -43,10 +43,10 @@ const SplitButton = ({options}) => {
   return (
     <Grid container direction="column" alignItems="center">
       <Grid item xs={12}>
-        <ButtonGroup variant="outlined" color="primary" size="large" ref={anchorRef} aria-label="split button">
+        <ButtonGroup variant="outlined" color="secondary" size="large" ref={anchorRef} aria-label="split button">
           <Button onClick={handleClick}>{options[selectedIndex]}</Button>
           <Button
-            color="primary"
+            color="secondary"
             size="small"
             aria-controls={open ? 'split-button-menu' : undefined}
             aria-expanded={open ? 'true' : undefined}

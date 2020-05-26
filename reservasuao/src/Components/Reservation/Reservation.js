@@ -7,20 +7,22 @@ import Button from '../Button/Button.js';
 const Reservation = () => {
     return (
         <div>
-            <h4> Reservas </h4>
+            <div className="container text-center pt-5">
+            <h2> Reservas </h2>
+            </div>
             <div >
-                <div className="container o-cont">
+                <div className="container o-cont mt-5 mb-5">
                     <div>
                         <Split/>
                     </div>
                     <div>
-                      <Table/>
-                      <Button/>
+                        <Table/>
+                        <Button/>
                     </div>
                 </div>
             </div>
         </div>
     );
-};
+}; 
 
 export default Reservation;

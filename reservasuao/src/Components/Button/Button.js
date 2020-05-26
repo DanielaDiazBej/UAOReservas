@@ -15,7 +15,7 @@ export default function ContainedButtons() {
 
   return (
     <div className={classes.root} className="p-5 d-flex justify-content-center">
-      <Button variant="contained" color="primary" data-toggle="modal" data-target="#ResAlert" className="o-btnReservar">Reservar</Button>
+      <Button variant="contained" color="secondary" data-toggle="modal" data-target="#ResAlert" className="o-btnReservar">Reservar</Button>
 
 
       <div class="modal fade" id="ResAlert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

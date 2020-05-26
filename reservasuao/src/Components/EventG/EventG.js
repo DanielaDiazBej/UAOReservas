@@ -4,8 +4,8 @@ import './EventG.css';
 
 const EventG = ({imgEvent, nameEvent, descEvent, placeEvent, linkEvent}) => {
     return ( 
-        <div className="col-md-4 o-card">
-            <div class="card m-3">
+        <div className="col-md-4  o-card">
+            <div class="card m-3 rounded">
                 <img src={imgEvent} class="card-img-top" alt="invitacion a evento" />
                 <div class="card-body o-cardBody">
                     <p class="card-header o-cardHeader">Lugar: {placeEvent}</p>

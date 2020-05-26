@@ -29,8 +29,8 @@ ReactDOM.render(
         <Route path="/Support" component={Support} />
       </Switch>
     </div>
-  </Router>
   <Footer />
+  </Router>
 </React.StrictMode>,
   document.getElementById('root')
 );
