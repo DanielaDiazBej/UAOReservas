@@ -1,28 +1,31 @@
-import React, {useState, useRef} from 'react';
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import Grow from '@material-ui/core/Grow';
-import Paper from '@material-ui/core/Paper';
-import Popper from '@material-ui/core/Popper';
-import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
-import { withStyles } from '@material-ui/core';
+import React, { useState, useRef } from "react";
+import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
+import ButtonGroup from "@material-ui/core/ButtonGroup";
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import Grow from "@material-ui/core/Grow";
+import Paper from "@material-ui/core/Paper";
+import Popper from "@material-ui/core/Popper";
+import MenuItem from "@material-ui/core/MenuItem";
+import MenuList from "@material-ui/core/MenuList";
+import { withStyles } from "@material-ui/core";
 
-
-const SplitButton = ({name, options, classes}) => {
+const SplitButton = ({ name, options, classes, handleOption }) => {
   const [open, setOpen] = useState(false);
   const anchorRef = useRef(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const handleClick = () => {
     console.info(`You clicked ${options[selectedIndex]}`);
+    if (handleOption) {
+      handleOption(options[selectedIndex]);
+    }
   };
 
   const handleMenuItemClick = (event, index) => {
     setSelectedIndex(index);
+    handleOption(options[index]);
     setOpen(false);
   };
 
@@ -41,28 +44,41 @@ const SplitButton = ({name, options, classes}) => {
   return (
     <Grid container direction="column" alignItems="center">
       <Grid item xs={12}>
-        <ButtonGroup className={classes.typografy} variant="outlined" size="large" ref={anchorRef} aria-label="split button">
-          <Button onClick={handleClick}
-          
-            
+        <ButtonGroup
+          className={classes.typografy}
+          variant="outlined"
+          size="large"
+          ref={anchorRef}
+          aria-label="split button"
+        >
+          <Button
+            onClick={handleClick}
             className={classes.bnt}
             size="small"
-            aria-controls={open ? 'split-button-menu' : undefined}
-            aria-expanded={open ? 'true' : undefined}
+            aria-controls={open ? "split-button-menu" : undefined}
+            aria-expanded={open ? "true" : undefined}
             aria-label="select merge strategy"
             aria-haspopup="menu"
             onClick={handleToggle}
-            >{options[selectedIndex]}
-          
+          >
+            {options[selectedIndex]}
+
             <ArrowDropDownIcon className={classes.arrow} />
           </Button>
         </ButtonGroup>
-        <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+        <Popper
+          open={open}
+          anchorEl={anchorRef.current}
+          role={undefined}
+          transition
+          disablePortal
+        >
           {({ TransitionProps, placement }) => (
             <Grow
               {...TransitionProps}
               style={{
-                transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom',
+                transformOrigin:
+                  placement === "bottom" ? "center top" : "center bottom",
               }}
             >
               <Paper>
@@ -87,12 +103,11 @@ const SplitButton = ({name, options, classes}) => {
       </Grid>
     </Grid>
   );
-}
+};
 
 export default withStyles({
-
   typografy: {
-    fontFamily: "'Poppins', sans-serif"
+    fontFamily: "'Poppins', sans-serif",
   },
 
   bnt: {
@@ -105,11 +120,10 @@ export default withStyles({
     textTransform: "none",
     fontSize: "15px",
     fontFamily: "'Poppins', sans-serif",
-    fontWeight: "600"
+    fontWeight: "600",
   },
 
   arrow: {
-    color: "#000"
-  }
-
-}) (SplitButton);
+    color: "#000",
+  },
+})(SplitButton);
