@@ -24,7 +24,7 @@ const LoginForm = () => {
   const handleLogin = () => {
     axios
       .post(
-        "https://ec2-3-21-45-36.us-east-2.compute.amazonaws.com/auth/local/register",
+        "http://ec2-3-21-45-36.us-east-2.compute.amazonaws.com/auth/local/register",
         {
           email: identifier?.current?.value,
           username: identifier?.current?.value?.split("@")[0], // "frank.smith@uao.edu.co",
