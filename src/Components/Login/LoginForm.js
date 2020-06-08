@@ -22,7 +22,7 @@ const LoginForm = () => {
   const handleLogin = () => {
     axios
       .post(
-        "https://ec2-3-21-45-36.us-east-2.compute.amazonaws.com/auth/local",
+        "http://ec2-3-21-45-36.us-east-2.compute.amazonaws.com/auth/local",
         {
           identifier: identifier?.current?.value, // "frank.smith@uao.edu.co",
           password: password?.current?.value, //"123456",

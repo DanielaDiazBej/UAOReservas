@@ -10,7 +10,7 @@ const MyReservation = () => {
   const [rooms, setRooms] = useState([]);
   const getData = () => {
     axios
-      .post("https://ec2-3-21-45-36.us-east-2.compute.amazonaws.com/graphql", {
+      .post("http://ec2-3-21-45-36.us-east-2.compute.amazonaws.com/graphql", {
         query: `query {
           rooms(sort: "id:ASC") {
             id

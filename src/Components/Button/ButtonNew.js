@@ -32,7 +32,7 @@ function Button({
     });
     axios
       .put(
-        `https://ec2-3-21-45-36.us-east-2.compute.amazonaws.com/rooms/${data.id}`,
+        `http://ec2-3-21-45-36.us-east-2.compute.amazonaws.com/rooms/${data.id}`,
         {
           ...data,
           reservations: [
