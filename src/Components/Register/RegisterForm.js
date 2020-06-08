@@ -55,7 +55,7 @@ const LoginForm = () => {
           <img src={logo} />
         </div>
         <div className="o-line"></div>
-        <h2 className="o-login">Ingresar</h2>
+        <h2 className="o-login">Registrar</h2>
         <input className="o-user" ref={name} type="text" placeholder="Nombre" />
         <input
           className="o-user"
