@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ReservasUAO/precache-manifest.3cd05bc570d5b341947a4b447ca71361.js"
+  "/ReservasUAO/precache-manifest.3cf31c267b694d01fbc069e7c55e1771.js"
 );
 
 self.addEventListener('message', (event) => {

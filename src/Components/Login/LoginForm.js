@@ -54,7 +54,7 @@ const LoginForm = () => {
           className="o-user"
           ref={identifier}
           type="email"
-          placeholder="Usuario"
+          placeholder="Correo"
         />
         <input
           className="o-psd"
@@ -67,7 +67,7 @@ const LoginForm = () => {
           onClick={() => {
             history.push("/register");
           }}
-          action="Regsitarse"
+          action="Registrarse"
         />
         <p>¿Has olvidado tu usuario o contraseña?</p>
       </div>
