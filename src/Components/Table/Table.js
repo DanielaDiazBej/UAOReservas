@@ -57,10 +57,6 @@ const Table = ({
         <Grid item md={2}>
           <h1 className="o-room">{room}</h1>
         </Grid>
-        <Grid item md={8} className="o-week">
-          <button>Semana actual</button>
-          <button>Semana siguiente</button>
-        </Grid>
       </Grid>
       <Grid container className="o-container-cuadros">
         <Grid item className="o-cuadro">
