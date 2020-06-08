@@ -59,7 +59,7 @@ const LoginForm = () => {
         <input
           className="o-psd"
           ref={password}
-          type="text"
+          type="password"
           placeholder="Contraseña..."
         />
         <ButtonLogin onClick={handleLogin} action="Ingresar" />

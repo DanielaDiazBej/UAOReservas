@@ -77,10 +77,10 @@ const LoginForm = () => {
         <input
           className="o-psd"
           ref={password}
-          type="text"
+          type="password"
           placeholder="Contraseña..."
         />
-        <ButtonLogin onClick={handleLogin} action="Ingresar" />
+        <ButtonLogin onClick={handleLogin} action="Registrarse" />
         <p>¿Has olvidado tu usuario o contraseña?</p>
       </div>
     </div>
