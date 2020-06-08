@@ -10,17 +10,19 @@ import MyReservations from "./Pages/MyReservations/MyReservations";
 import Support from "./Pages/Support/Support";
 import Map from "./Pages/Map/Map";
 import Footer from "./Components/Footer/Footer";
-import Login from './Pages/Login/Login';
-import Pages from "./Pages/Pages"
+import Login from "./Pages/Login/Login";
+import Register from "./Pages/Register/Register";
+import Pages from "./Pages/Pages";
 
 function App() {
   return (
     <div className="App">
       <Router>
-          <Switch>
-            <Route exact path='/' component={Login}/>
-            <Route path='/Pages' component = {Pages}/>
-          </Switch> 
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route path="/register" component={Register} />
+          <Route path="/Pages" component={Pages} />
+        </Switch>
       </Router>
     </div>
   );
