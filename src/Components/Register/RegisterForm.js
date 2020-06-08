@@ -56,29 +56,24 @@ const LoginForm = () => {
         </div>
         <div className="o-line"></div>
         <h2 className="o-login">Ingresar</h2>
-        <input
-          className="o-user"
-          ref={name}
-          type="text"
-          placeholder="Nombre..."
-        />
+        <input className="o-user" ref={name} type="text" placeholder="Nombre" />
         <input
           className="o-user"
           ref={last_name}
           type="text"
-          placeholder="Apellido..."
+          placeholder="Apellido"
         />
         <input
           className="o-user"
           ref={identifier}
           type="email"
-          placeholder="correo..."
+          placeholder="Correo"
         />
         <input
           className="o-psd"
           ref={password}
           type="password"
-          placeholder="Contraseña..."
+          placeholder="Contraseña"
         />
         <ButtonLogin onClick={handleLogin} action="Registrarse" />
         <p>¿Has olvidado tu usuario o contraseña?</p>

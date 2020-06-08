@@ -54,13 +54,13 @@ const LoginForm = () => {
           className="o-user"
           ref={identifier}
           type="email"
-          placeholder="Usuario..."
+          placeholder="Usuario"
         />
         <input
           className="o-psd"
           ref={password}
           type="password"
-          placeholder="Contraseña..."
+          placeholder="Contraseña"
         />
         <ButtonLogin onClick={handleLogin} action="Ingresar" />
         <ButtonLogin
